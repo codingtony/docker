@@ -8,7 +8,7 @@ docker pull codingtony/mule
 ```
 
 ### Use it with your Mule application
-| volume | description
+| important directories | description
 |--- |---
 |/opt/mule/apps | Application directory
 |/opt/mule/conf | Configuration & log4j configuration. wrapper.conf is mandatory

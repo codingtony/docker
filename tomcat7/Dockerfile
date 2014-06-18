@@ -10,10 +10,6 @@ RUN cd /opt && tar xvf ~/apache-tomcat-7.0.54.tar.gz
 RUN ln -sf /opt/apache-tomcat-7.0.54 /opt/tomcat
 RUN rm ~/apache-tomcat-7.0.54.tar.gz
 
-
-VOLUME [ "/opt/tomcat/temp", "/opt/tomcat/webapps", "/opt/tomcat/work", "/opt/tomcat/conf", "/opt/tomcat/logs" ]
-
-
 EXPOSE 8080
 
 CMD [ "/opt/tomcat/bin/catalina.sh","run" ]

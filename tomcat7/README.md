@@ -8,7 +8,7 @@ docker pull codingtony/tomcat7
 ```
 
 ### Use it with your Mule application
-| volume | description
+| important directories | description
 |--- |---
 |/opt/tomcat/temp | Temporary directory | 
 |/opt/tomcat/webapps | Webapps |
