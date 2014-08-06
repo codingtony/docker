@@ -1,0 +1,8 @@
+#!/bin/bash
+exec 2>&1
+export APACHE_LOG_DIR=/var/log/apache2
+export APACHE_RUN_USER=www-data
+export APACHE_RUN_GROUP=www-data
+export APACHE_LOCK_DIR=/var/run/apache2/lock
+export APACHE_PID_FILE=/var/run/apache2/apache2.pid
+exec /usr/sbin/apache2 -D FOREGROUND 
