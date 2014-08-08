@@ -48,9 +48,9 @@ If you don't add the ```--volume-from rhodecodedata``` to the command line, you 
  docker run -ti -p 5000:5000   codingtony/rhodecode ls /opt/rhodecode
 ```
 
-When you are ready to start an image with the change saved in the volumes you can simply do :
+When you are ready to start (as a daemon) an image with the change saved in the volumes you can simply do :
 ```
-docker run -p 5000:5000  --volumes-from rhodecodedata codingtony/rhodecode
+docker run -d -p 5000:5000  --volumes-from rhodecodedata codingtony/rhodecode
 ```
 
 ## Backup
