@@ -30,7 +30,7 @@ If you need to persist the data to a volume, you will need to build a *data only
 Here I want the volumes /opt/rhodecode and /var/repo, and we need to name it so that we can refer to it later. I use tianon/true since it is probably the smallest Docker image available.
 
 ```
-docker run -v /opt/rhodecode -v /var/repo   --name "rhodecode_data" tianon/true
+docker run -v /opt/rhodecode -v /var/repo   --name "rhodecodedata" tianon/true
 ```
 
 Then you want to use the volume from that named container when you start your image. 
