@@ -7,9 +7,10 @@ for development related projects and also to promote and quickly show the capabi
 
 ##Currently Available
 
-* java creates a basic Ubuntu 14.04 image with Oracle JDK 7
-* mule is based on codingtony/java and installs a vanilla version of Mule ESB 3.5.0
-* tomcat7 is based on codingtony/tomcat7 and installs a vanilla version of Tomcat 7.0.54
+* java : creates a basic Ubuntu 14.04 image with Oracle JDK 7
+* mule : based on codingtony/java and installs a vanilla version of Mule ESB 3.5.0
+* tomcat7 : based on codingtony/tomcat7 and installs a vanilla version of Tomcat 7.0.54
+* rhodecode : the source management platform for Git and Mercurial repository  (v. 1.7.2)
 
 ##Planned
 
