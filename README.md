@@ -53,6 +53,14 @@ When you are ready to start an image with the change saved in the volumes you ca
 docker run -p 5000:5000 -ti --volumes-from rhodecodedata codingtony/rhodecode
 ```
 
+## Backup
+
+This create a timestamped tgz file in the current directory containing the /var/repo and /opt/rhodecode from your data image
+
+```
+docker run  --rm --volumes-from  rhodecodedata busybox tar cpf - /var/repo /opt/rhodecode | gzip > backup-rhodecodedata-$(date +"%Y%m%d_%H%M%S").tar.gz
+```
+
 
 
 
