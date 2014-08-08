@@ -19,3 +19,40 @@ for development related projects and also to promote and quickly show the capabi
 * butor-demo webapp
 * butor-demo services
 * butor-demo data
+* 
+
+## Quick Tutorial on Docker persistance
+
+If you need to persist the data to a volume, you will need to build a *data only container* and create volumes on it. Then you will need to use volumes from that data container when you start your other containers. Here's how to proceed :
+
+### Creating the data only container
+
+Here I want the volumes /opt/rhodecode and /var/repo, and we need to name it so that we can refer to it later. I use tianon/true since it is probably the smallest Docker image available.
+
+```
+docker run -v /opt/rhodecode -v /var/repo   --name "rhodecode_data" tianon/true
+```
+
+Then you want to use the volume from that named container when you start your image. 
+The changes you do in /opt/rhodecode and in /var/repo will be persisted. Initialy theses directory will be *EMPTY*
+
+The way to do it :
+```
+ docker run -ti --volumes-from rhodecodedata codingtony/rhodecode bash
+```
+
+
+If you don't add the ```--volume-from rhodecodedata``` to the command line, you will see the original content from the image
+
+```
+ docker run -ti -p 5000:5000   codingtony/rhodecode ls /opt/rhodecode
+```
+
+When you are ready to start an image with the change saved in the volumes you can simply do :
+```
+docker run -p 5000:5000 -ti --volumes-from rhodecodedata codingtony/rhodecode
+```
+
+
+
+
