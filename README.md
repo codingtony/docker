@@ -11,6 +11,7 @@ for development related projects and also to promote and quickly show the capabi
 * mule : based on codingtony/java and installs a vanilla version of Mule ESB 3.5.0
 * tomcat7 : based on codingtony/tomcat7 and installs a vanilla version of Tomcat 7.0.54
 * rhodecode : the source management platform for Git and Mercurial repository  (v. 1.7.2)
+* artifactory : A popular opensource repository manager for Maven and others (yum, ivy, etc)
 
 ##Planned
 
@@ -19,7 +20,7 @@ for development related projects and also to promote and quickly show the capabi
 * butor-demo webapp
 * butor-demo services
 * butor-demo data
-* 
+
 
 ## Quick Tutorial on Docker persistance
 
@@ -53,6 +54,10 @@ When you are ready to start (as a daemon) an image with the change saved in the 
 docker run -d -p 5000:5000  --volumes-from rhodecodedata codingtony/rhodecode
 ```
 
+***VERY IMPORTANT*** 
+The volume you try to mount in the image must not be symlinks, they must be real paths!  Otherwise you will get "Cannot start container...  not a directory" when you try to start the image with --volumes from
+
+
 ## Backup
 
 ### Automatically
@@ -63,7 +68,6 @@ Fetch backupContainer.sh from this repo :
 ```
 wget https://raw.githubusercontent.com/codingtony/docker/master/backupContainer.sh
 chmod +x backupContainer.sh
-
 ```
 And backup easily with :
 ```
