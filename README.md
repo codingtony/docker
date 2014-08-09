@@ -55,6 +55,30 @@ docker run -d -p 5000:5000  --volumes-from rhodecodedata codingtony/rhodecode
 
 ## Backup
 
+### Automatically
+
+I've built a tool to easily backup volumes from data containers
+
+Fetch backupContainer.sh from this repo :
+```
+wget https://raw.githubusercontent.com/codingtony/docker/master/backupContainer.sh
+chmod +x backupContainer.sh
+
+```
+And backup easily with :
+```
+./backupContainer.sh containerdataname /backup/destination/directory
+```
+
+This will create a timestamped tar.gz file named /backup/destination/directory/backup-containerdataname-YYYYMMDD_HHmmSS.tar.gz
+
+Enjoy!
+
+
+### Manually 
+
+If you prefer to do it manually :
+
 This create a timestamped tgz file in the current directory containing the /var/repo and /opt/rhodecode from your data image
 
 ```
