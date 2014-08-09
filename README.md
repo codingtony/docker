@@ -59,7 +59,7 @@ docker run -d -p 5000:5000  --volumes-from rhodecodedata codingtony/rhodecode
 The volume you try to mount in the image must not be symlinks, they must be real paths!  Otherwise you will get "Cannot start container...  not a directory" when you try to start the image with ```--volumes from```
 
 
-## Backup
+## Backup a Docker Data Container
 
 ### Automatically
 
