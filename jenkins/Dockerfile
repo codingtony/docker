@@ -13,10 +13,11 @@ RUN mkdir -p /opt/jenkins/data/
 RUN mv  ~/jenkins.war /opt/jenkins
 RUN ln -s /opt/apache-maven-3.2.3 /opt/maven
 RUN ln -s /opt/jenkins/data/m2home /root/.m2
+ADD start.sh /opt/jenkins/start.sh
 
 
 EXPOSE 8080
 
-CMD /usr/bin/java -Duser.timezone=${TZ} -jar /opt/jenkins/jenkins.war
+CMD /opt/jenkins/start.sh
 
 
