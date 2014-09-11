@@ -23,10 +23,10 @@ docker run --name "jenkinsdata" -v /opt/jenkins/data  tianon/true
 ## How to use Jenkins with the data container
 
 ```
-docker run -d -p 8080:8080 --volumes-from jenkinsdata  codingtony/jenkins
+docker run -d -p 8080:8080 --name "jenkins" --volumes-from jenkinsdata  -v /etc/timezone:/etc/timezone:ro codingtony/jenkins
 ```
 
-If you need to upgrade or setup, you probably want to log to the image and update the configuration you will simply to this :
+If you need to setup stuff in /opt/jenkins/data,  you probably want to log to the image and update the configuration you will simply to this :
 
 ```
 docker run --rm -ti -p 8080:8080 --volumes-from jenkinsdata  codingtony/jenkins bash
