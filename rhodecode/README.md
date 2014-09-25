@@ -32,18 +32,18 @@ You can change it at your first login.
 
 ## How to create a data container for rhodecode
 ```
-docker run --name "rhodecode_data" -v /opt/rhodecode -v /var/repo tianon/true 
+docker run --name "rhodecodedata" -v /opt/rhodecode -v /var/repo tianon/true 
 ```
 
 ## How to use rhodecode with the data container
 
 ```
-docker run -d -p 5000:5000 --volumes-from rhodecode_data  codingtony/rhodecode
+docker run -d -p 5000:5000 --name "rhodecode" --volumes-from rhodecodedata  -v /etc/localtime:/etc/localtime:ro -v /etc/sysconfig/clock:/etc/sysconfig/clock:ro codingtony/rhodecode
 ```
 
 If you need to upgrade or setup, you probably want to log to the image and update the configuration you will simply to this :
 
 ```
-docker run -ti -p 5000:5000 --volumes-from rhodecode_data codingtony/rhodecode bash
+docker run -ti --rm  -p 5000:5000 --name "rhodecode" --volumes-from rhodecodedata  -v /etc/localtime:/etc/localtime:ro -v /etc/sysconfig/clock:/etc/sysconfig/clock:ro codingtony/rhodecode bash
 ```
 
