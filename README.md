@@ -13,6 +13,7 @@ for development related projects and also to promote and quickly show the capabi
 * rhodecode : the source management platform for Git and Mercurial repository  (v. 1.7.2)
 * artifactory : A popular opensource repository manager for Maven
 * jenkins : A popular opensource continuous integration (CI) engine
+* cdh5-base : A base image with Cloudera Hadoop 5 repositories + Oracle JDK 7. Based on Ubuntu 12.04 (precise)
 
 ##Planned
 
