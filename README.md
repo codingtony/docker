@@ -12,6 +12,8 @@ for development related projects and also to promote and quickly show the capabi
 * tomcat7 : based on codingtony/tomcat7 and installs a vanilla version of Tomcat 7.0.54
 * rhodecode : the source management platform for Git and Mercurial repository  (v. 1.7.2)
 * artifactory : A popular opensource repository manager for Maven
+* jenkins : A popular opensource continuous integration (CI) engine
+* cdh5-base : A base image with Cloudera Hadoop 5 repositories + Oracle JDK 7. Based on Ubuntu 12.04 (precise)
 
 ##Planned
 
