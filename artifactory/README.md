@@ -25,13 +25,13 @@ docker run --name "artifactorydata" -v /opt/artifactory/data -v /opt/artifactory
 If you need to upgrade or setup, you probably want to log to the image and update the configuration you will simply to this :
 
 ```
-docker run -ti -p 8081:8081 --volumes-from artifactorydata  codingtony/artifactory bash
+docker run --rm -ti --volumes-from artifactorydata  codingtony/artifactory bash
 ```
 
 ## How to use artifactory with the data container
 
 ```
-docker run -d -p 8081:8081 --name "artifactory" --volumes-from artifactorydata  codingtony/artifactory
+docker run -d -p 8081:8081 --name "artifactory" --volumes-from artifactorydata  -v /etc/localtime:/etc/localtime:ro -v /etc/sysconfig/clock:/etc/sysconfig/clock:ro   codingtony/artifactory
 ```
 
 

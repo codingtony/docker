@@ -44,7 +44,7 @@ docker run -d -p 5000:5000 --name "rhodecode" --volumes-from rhodecodedata  -v /
 ## How to use rhodecode with the data container
 
 ```
-docker run -ti --rm  -p 5000:5000 --name "rhodecode" --volumes-from rhodecodedata  -v /etc/localtime:/etc/localtime:ro -v /etc/sysconfig/clock:/etc/sysconfig/clock:ro codingtony/rhodecode bash
+docker run -ti --rm  --volumes-from rhodecodedata  -v /etc/localtime:/etc/localtime:ro -v /etc/sysconfig/clock:/etc/sysconfig/clock:ro codingtony/rhodecode bash
 ```
 
 
