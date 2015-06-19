@@ -1,6 +1,14 @@
-# Artifactory 3.3.0
+# Jenkins (1.617)
 
-This Dockerfile creates an image to run a clean Jenkins Installation
+This Dockerfile creates an image to run a clean Jenkins installation based on Ubuntu. With following packages installed :
+   * Apache Maven 3.3.3
+   * unzip 
+   * curl 
+   * git 
+   * mercurial 
+   * rpm 
+   * make 
+   * graphviz
 
 Jenkins listen on port 8080 by default
 
